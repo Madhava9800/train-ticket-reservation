@@ -32,6 +32,10 @@ jobs:
           name: war-file
           path: ${{ env.WAR_FILE }}
 
+          -name: verify WAR file
+          run: ls -lh target/
+      
+
 
 
 
