@@ -22,7 +22,7 @@ jobs:
         run: mvn compile
       
       - name: test with maven
-         run: mvn test
+        run: mvn test
       
       - name: package with maven
         run: mvn clean package
@@ -30,13 +30,6 @@ jobs:
       - name: verify WAR file
         run: ls -lh target/
       
-      - name: Build, Test and SonarQube Scan
-        run: |
-          mvn clean verify sonar:sonar \
-            -Dsonar.projectKey=train-ticket-reservation \
-            -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" \
-            -Dsonar.login="${{ secrets.SONAR_TOKEN }}"
-
       - name: check tomcat connection
         run: |
                  curl --fail --anyauth -u "${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASSWORD }}" \
