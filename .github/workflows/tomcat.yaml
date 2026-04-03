@@ -65,3 +65,12 @@ jobs:
           curl --fail --show-error -u "$USER:$PASS" \
             -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
+
+
+
+
+
+
+
+
+
