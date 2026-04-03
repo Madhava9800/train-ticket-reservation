@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: war-file
-          path: target/*.war   # ✅ safer than env variable
+          path: target/*.war   
 
   deploy-dev:
     needs: build
@@ -65,5 +65,10 @@ jobs:
           curl --fail --show-error -u "$USER:$PASS" \
             -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
+
+
+
+
+            
 
 
